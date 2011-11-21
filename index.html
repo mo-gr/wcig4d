@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<!--
+  Presentation about Coffee Script
+
+  based on the Google HTML5 slide template
+
+  Authors: moritz.grauel@akquinet.de
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<head>
+    <title>Why coffee is good for developers</title>
+
+    <meta charset='utf-8'>
+    <script
+            src='slides.js'></script>
+</head>
+
+<style>
+        /* Your individual styles here, or just use inline styles if that’s
+     what you want. */
+
+
+</style>
+
+<body style='display: none'>
+
+<script type="text/javascript">
+    function $(element) {
+        return document.getElementById(element);
+    }
+
+    function refreshLiveCoding(e, basename) {
+        var src = $(basename + '_src');
+        var dst = $(basename + '_embed');
+        var html = src.innerText;
+        var scripts = /<script type=\"text\/javascript\">([^<]*)<\/script>/i.exec(html);
+        console.log('scripts: ' + scripts);
+        if ( scripts ) {
+            var scriptCode = scripts[1];
+            html = html.replace(/<script>[^<]*<\/script>/, '');
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.innerText = scriptCode;
+            document.body.appendChild(script);
+        }
+        dst.innerHTML = html;
+        if ( e ) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        try {
+            initstars();
+        } catch (e) {
+        }
+        return false;
+    }
+
+    // Sync a contenteditable containing html with a div containing the result.
+    function manageLiveCoding(basename) {
+        var src = $(basename + '_src');
+        //refreshLiveCoding(null, basename);
+        src.addEventListener('keydown', function (e) {
+            if ( e.keyCode == 9 )  // tab
+                return true;
+            window.setTimeout(function () {
+                //refreshLiveCoding(null, basename);
+            }, 0);
+            e.stopPropagation();
+            return false;
+        }, false);
+        src.addEventListener('blur', function (e) {
+            window.setTimeout(function () {
+                prettyPrint();
+            }, 0);
+        }, false);
+    }
+</script>
+
+<section class='slides layout-regular template-akquinet'>
+
+<!-- Your slides (<article>s) go here. Delete or comment out the
+slides below. -->
+
+<article>
+    <h1>
+        Why coffee is good for developers
+    </h1>
+
+    <p>
+        Moritz Grauel
+        <br>
+        November 29, 2011
+    </p>
+</article>
+
+<!--COFFEE TEASER-->
+
+<!--WHY NOT JS-->
+
+<!--JS WTFs-->
+
+<article>
+    <h3>Equals is easy, right?</h3>
+
+    <div id="wtfEquals_embed"></div>
+    <pre id="wtfEquals_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    if (1 == '1') alert('WTF?!');
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfEquals')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfEquals')
+    </script>
+</article>
+
+<article>
+    <h3>It's math!</h3>
+
+    <div id="wtfMath_embed"></div>
+    <pre id="wtfMath_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    if (Math.min() > Math.max()) alert('WTF?!');
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfMath')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfMath')
+    </script>
+</article>
+
+<article>
+    <h3>But it is a number?!</h3>
+
+    <div id="wtfNumber_embed"></div>
+    <pre id="wtfNumber_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    alert('My favorite number is: ' + 9999999999999999);
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfNumber')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfNumber')
+    </script>
+</article>
+
+<article>
+    <h3>Identity Crisis?</h3>
+
+    <div id="wtfIdent_embed"></div>
+    <pre id="wtfIdent_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    var foo    = [0];
+    var amI    = foo == foo;
+    var amINot = foo == !foo;
+    alert("I am: " + amI + "\nI am not: " + amINot);
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfIdent')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfIdent')
+    </script>
+</article>
+
+<!--<article>
+    <h3>It's a question of personal style</h3>
+
+    <div id="wtfBrace_embed"></div>
+    <pre id="wtfBrace_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    findBestDev = function() {
+        return // I like my braces on the next line
+        {
+            name: 'Moritz'
+        };
+    };
+    var bestDev = findBestDev();
+    alert('Best Developer: ' + bestDev.name);
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfBrace')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfBrace')
+    </script>
+</article>-->
+
+<article>
+    <h3>Now you are just fu**ing with me...</h3>
+
+    <div id="wtfArray_embed"></div>
+    <pre id="wtfArray_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    if (new Array([],null,undefined,null) == ",,," ) {
+        alert('WTF?!');
+    }
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfArray')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfArray')
+    </script>
+</article>
+
+<article>
+    <p>I could go on and on and on...</p>
+    <p>Javascript is a language full of surprises.</p>
+</article>
+<!--TEMPLATE -->
+
+<article>
+    <p>
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+    </p>
+
+    <p>
+        There is more text just underneath.
+    </p>
+</article>
+
+<article>
+    <h3>
+        Simple slide with header and text
+    </h3>
+
+    <p>
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+    </p>
+
+    <p>
+        There is more text just underneath with a <code>code sample: 5px</code>.
+    </p>
+</article>
+
+<article class='smaller'>
+    <h3>
+        Simple slide with header and text (small font)
+    </h3>
+
+    <p>
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+        This is a slide with just text. This is a slide with just text.
+    </p>
+
+    <p>
+        There is more text just underneath with a <code>code sample: 5px</code>.
+    </p>
+</article>
+
+<article>
+    <h3>
+        Slide with bullet points and a longer title, just because we
+        can make it longer
+    </h3>
+    <ul>
+        <li>
+            Use this template to create your presentation
+        </li>
+        <li>
+            Use the provided color palette, box and arrow graphics, and
+            chart styles
+        </li>
+        <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+        </li>
+        <li>
+            At all times strive to maintain Google's corporate look and feel
+        </li>
+    </ul>
+</article>
+
+<article>
+    <h3>
+        Slide with bullet points that builds
+    </h3>
+    <ul class="build">
+        <li>
+            This is an example of a list
+        </li>
+        <li>
+            The list items fade in
+        </li>
+        <li>
+            Last one!
+        </li>
+    </ul>
+
+    <div class="build">
+        <p>Any element with child nodes can build.</p>
+
+        <p>It doesn't have to be a list.</p>
+    </div>
+</article>
+
+<article class='smaller'>
+    <h3>
+        Slide with bullet points (small font)
+    </h3>
+    <ul>
+        <li>
+            Use this template to create your presentation
+        <li>
+            Use the provided color palette, box and arrow graphics, and
+            chart styles
+        <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+        <li>
+            At all times strive to maintain Google's corporate look and feel
+    </ul>
+</article>
+
+<article>
+    <h3>
+        Slide with a table
+    </h3>
+
+    <table>
+        <tr>
+            <th>
+                Name
+            <th>
+                Occupation
+                <tr>
+                    <td>
+                        Luke Mahé
+                    <td>
+                        V.P. of Keepin’ It Real
+        <tr>
+            <td>
+                Marcin Wichary
+            <td>
+                The Michael Bay of Doodles
+    </table>
+</article>
+
+<article class='smaller'>
+    <h3>
+        Slide with a table (smaller text)
+    </h3>
+
+    <table>
+        <tr>
+            <th>
+                Name
+            <th>
+                Occupation
+                <tr>
+                    <td>
+                        Luke Mahé
+                    <td>
+                        V.P. of Keepin’ It Real
+        <tr>
+            <td>
+                Marcin Wichary
+            <td>
+                The Michael Bay of Doodles
+    </table>
+</article>
+
+<article>
+    <h3>
+        Styles
+    </h3>
+    <ul>
+        <li>
+            <span class='red'>class="red"</span>
+        <li>
+            <span class='blue'>class="blue"</span>
+        <li>
+            <span class='green'>class="green"</span>
+        <li>
+            <span class='yellow'>class="yellow"</span>
+        <li>
+            <span class='black'>class="black"</span>
+        <li>
+            <span class='white'>class="white"</span>
+        <li>
+            <b>bold</b> and <i>italic</i>
+    </ul>
+</article>
+
+<article>
+    <h2>
+        Segue slide
+    </h2>
+</article>
+
+<article>
+    <h3>
+        Slide with an image
+    </h3>
+
+    <p>
+        <img style='height: 500px' src='template/images/example-graph.png'>
+    </p>
+
+    <div class='source'>
+        Source: Sergey Brin
+    </div>
+</article>
+
+<article>
+    <h3>
+        Slide with an image (centered)
+    </h3>
+
+    <p>
+        <img class='centered' style='height: 500px' src='template/images/example-graph.png'>
+    </p>
+
+    <div class='source'>
+        Source: Larry Page
+    </div>
+</article>
+
+<article class='fill'>
+    <h3>
+        Image filling the slide (with optional header)
+    </h3>
+
+    <p>
+        <img src='template/images/example-cat.jpg'>
+    </p>
+
+    <div class='source white'>
+        Source: Eric Schmidt
+    </div>
+</article>
+
+<article>
+    <h3>
+        This slide has some code
+    </h3>
+    <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+    </section>
+</article>
+
+<article class='smaller'>
+    <h3>
+        This slide has some code (small font)
+    </h3>
+    <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+    </section>
+</article>
+
+<article>
+    <q>
+        The best way to predict the future is to invent it.
+    </q>
+
+    <div class='author'>
+        Alan Kay
+    </div>
+</article>
+
+<article class='smaller'>
+    <q>
+        A distributed system is one in which the failure of a computer
+        you didn’t even know existed can render your own computer unusable.
+    </q>
+
+    <div class='author'>
+        Leslie Lamport
+    </div>
+</article>
+
+<article class='nobackground'>
+    <h3>
+        A slide with an embed + title
+    </h3>
+
+    <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+</article>
+
+<article class='nobackground'>
+    <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+</article>
+
+<article class='fill'>
+    <h3>
+        Full-slide embed with (optional) slide title on top
+    </h3>
+    <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+</article>
+
+<article>
+    <h3>
+        Thank you!
+    </h3>
+
+    <ul>
+        <li>
+            <a href='http://www.google.com'>google.com</a>
+    </ul>
+</article>
+
+</section>
+
+</body>
+</html>
