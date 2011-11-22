@@ -29,8 +29,32 @@ function refreshLiveCoffee(e, basename) {
     var dst = $('#' + basename + '_embed')[0];
     var html = src.innerText;
     var scripts = /<script type=\"text\/coffeescript\">([^<]*)<\/script>/i.exec(html);
-    dst.innerHTML = '// Generated Javascript:\n' +  CoffeeScript.compile(scripts[1], {bare : true});
+    dst.innerHTML = '// Generated Javascript:\n' + CoffeeScript.compile(scripts[1], {bare:true});
     prettyPrint();
+    if ( e ) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    try {
+        initstars();
+    } catch (e) {
+    }
+    return false;
+}
+
+function executeLiveCoffee(e, basename) {
+    var src = $('#' + basename + '_src')[0];
+    var html = src.innerText;
+    var scripts = /<script type=\"text\/coffeescript\">([^<]*)<\/script>/i.exec(html);
+    if ( scripts ) {
+        var scriptCode = scripts[1];
+        html = html.replace(/<script type=\"text\/coffeescript\">([^<]*)<\/script>/, '');
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.innerText = CoffeeScript.compile(scriptCode, {bare:false});
+        console.log('scripts: ' + script.innerText);
+        document.body.appendChild(script);
+    }
     if ( e ) {
         e.preventDefault();
         e.stopPropagation();

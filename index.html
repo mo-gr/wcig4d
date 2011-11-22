@@ -28,7 +28,7 @@
 <!-- Your slides (<article>s) go here. Delete or comment out the
 slides below. -->
 
-<article>
+<article class="fill">
     <h1>
         Why coffee is good for developers
     </h1>
@@ -38,6 +38,8 @@ slides below. -->
         <br>
         November 29, 2011
     </p>
+    <div class="img" style="background: url('images/coffee 2.jpg') -30px -50px">
+    </div>
 </article>
 
 <!--COFFEE TEASER-->
@@ -201,13 +203,16 @@ slides below. -->
     <pre id="coffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
     <pre id="coffee_src" contenteditable="true" class="prettyprint">
 &lt;script type="text/coffeescript">
-        alert('Hello!');
-        foo = 'bar';
+    alert('Hello!');
+    foo = 'bar';
 &lt;/script></pre>
 
     <button class="refresh" onclick="return refreshLiveCoffee(event, 'coffee')" onkeydown="return onKeyDown(event)">
         Generate
     </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'coffee')" onkeydown="return onKeyDown(event)">
+            Execute
+        </button>
     <script type="text/javascript">
         manageLiveCoding('coffee')
     </script>
