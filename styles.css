@@ -352,6 +352,13 @@ h1 {
     border-radius: 10px;
 }
 
+.contrastBox {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
 h2 {
     font-size: 45px;
     line-height: 45px;
@@ -521,7 +528,7 @@ article.fill div.img {
     z-index: -1;
 }
 
-img.centered {
+.centered {
     margin: 0 auto;
     display: block;
 }
@@ -555,7 +562,7 @@ th {
     line-height: 18px;
 }
 
-q {
+p.centered, q {
     display: block;
     font-size: 60px;
     line-height: 72px;
@@ -563,7 +570,7 @@ q {
     margin-left: 20px;
 
     margin-top: 100px;
-    margin-right: 150px;
+    margin-right: 20px;
 }
 
 q::before {
