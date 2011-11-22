@@ -5,7 +5,7 @@
 
   based on the Google HTML5 slide template
 
-  Authors: moritz.grauel@akquinet.de
+  Author: Moritz Grauel, moritz.grauel@akquinet.de
 
   URL: http://code.google.com/p/html5slides/
 -->
@@ -20,13 +20,6 @@
     <script src='liveCode.js'></script>
     <script src='coffee-script.js'></script>
 </head>
-
-<style>
-        /* Your individual styles here, or just use inline styles if that’s
-     what you want. */
-
-
-</style>
 
 <body style='display: none'>
 
@@ -124,6 +117,28 @@ slides below. -->
     </script>
 </article>
 
+<article>
+    <h3>Hello Scope</h3>
+
+    <div id="wtfHello_embed"></div>
+    <pre id="wtfHello_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/javascript">
+    function hello(nameParam) {
+        greeting = 'Hello ' + nameParam;
+        return greeting;
+    }
+    alert('1st: ' + hello('World'));
+    alert('2nd: ' + greeting);
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoding(event, 'wtfHello')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('wtfHello')
+    </script>
+</article>
+
 <!--<article>
     <h3>It's a question of personal style</h3>
 
@@ -180,7 +195,7 @@ slides below. -->
 </article>
 <!--TEMPLATE -->
 
-<!--article>
+<article>
     <p>
         This is a slide with just text. This is a slide with just text.
         This is a slide with just text. This is a slide with just text.
@@ -503,7 +518,7 @@ slides below. -->
         <li>
             <a href='http://www.google.com'>google.com</a>
     </ul>
-</article-->
+</article>
 
 </section>
 

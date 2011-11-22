@@ -25,10 +25,10 @@ function refreshLiveCoding(e, basename) {
 }
 
 // Sync a contenteditable containing html with a div containing the result.
-manageLiveCoding = function (basename) {
-    var src = $('#' + basename + '_src');
+function manageLiveCoding(basename) {
+    var src = $('#' + basename + '_src')[0];
     //refreshLiveCoding(null, basename);
-    src.bind('keydown', function (e) {
+    src.addEventListener('keydown', function (e) {
         if ( e.keyCode == 9 )  // tab
             return true;
         window.setTimeout(function () {
@@ -37,7 +37,7 @@ manageLiveCoding = function (basename) {
         e.stopPropagation();
         return false;
     }, false);
-    src.bind('blur', function (e) {
+    src.addEventListener('blur', function (e) {
         window.setTimeout(function () {
             prettyPrint();
         }, 0);
