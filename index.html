@@ -369,8 +369,9 @@ slides below. -->
 
 <article id="hello-coffeescript-slide">
     <style>
-        #hello-coffeescript-slide h1 {
-            color: #191932;
+        #hello-coffeescript-slide h1, #hello-coffeescript-slide a {
+            color: #191932 !important;
+            text-decoration: none;
             font-size: 102px;
         }
 
@@ -378,7 +379,7 @@ slides below. -->
             margin-top: -30px;
         }
     </style>
-    <h1><img src="images/coffeescript_logo.png" style="align: center;"> CoffeeScript</h1>
+    <h1><a href="http://jashkenas.github.com/coffee-script/"><img src="images/coffeescript_logo.png" style="align: center;"> CoffeeScript</a></h1>
 </article>
 
 <article>
@@ -407,11 +408,11 @@ slides below. -->
 </article>
 
 <article>
-    <ul>
+    <ul class="build">
         <li>Coffee sticks to the good part</li>
         <li>Coffee generates readable, pretty-printed Javascript</li>
         <li>Coffee generats <a href="http://www.javascriptlint.com/">JSLint</a> compliant Javascript</li>
-        <li>Coffee gets rid of most WTFs</li>
+        <li>Coffee gets rid of many WTFs</li>
         <li>Interoperable with nearly all existing JS libraries (jQuery, Node, etc...)</li>
     </ul>
 </article>
@@ -569,24 +570,42 @@ slides below. -->
 </article>
 
 <article>
-    <h3>Coffee Test Slide</h3>
+    <ul class="build">
+        <li>Serverside compilation</li>
+        <li><a href="https://github.com/talios/coffee-maven-plugin">Maven Plugin</a> available</li>
+        <li>Clientside (not recommended at the moment)</li>
+    </ul>
+    <h2>Ok. But how do I use it?</h2>
+</article>
 
-    <pre id="coffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
-    <pre id="coffee_src" contenteditable="true" class="prettyprint">
-&lt;script type="text/coffeescript">
-    alert('Hello!');
-    foo = 'bar';
-&lt;/script></pre>
+<article>
+    <div class="build">
+        <p>
+            Just go back to regular Javascript
+        </p>
 
-    <button class="refresh" onclick="return refreshLiveCoffee(event, 'coffee')" onkeydown="return onKeyDown(event)">
-        Generate
-    </button>
-    <button class="refresh" onclick="return executeLiveCoffee(event, 'coffee')" onkeydown="return onKeyDown(event)">
-        Execute
-    </button>
-    <script type="text/javascript">
-        manageLiveCoding('coffee')
-    </script>
+        <p>
+            Use CoffeeScript output as a basis
+        </p>
+    </div>
+
+    <h2>And if you don't like it anymore...</h2>
+</article>
+
+<article id="goodbye-coffeescript-slide">
+    <style>
+        #goodbye-coffeescript-slide h1, #goodbye-coffeescript-slide a {
+            color: #191932 !important;
+            text-decoration: none;
+            font-size: 102px;
+        }
+
+        #goodbye-coffeescript-slide h1 img {
+            margin-top: -30px;
+        }
+    </style>
+    <h1><a target="_blank" href="http://jashkenas.github.com/coffee-script/"><img src="images/coffeescript_logo.png" style="align: center;"> CoffeeScript</a></h1>
+    <h2>Thank you...</h2>
 </article>
 
 <!--TEMPLATE -->
