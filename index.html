@@ -382,6 +382,193 @@ slides below. -->
 </article>
 
 <article>
+    <h3>What is CoffeeScript</h3>
+    <ul>
+        <li>Javascript without the fail</li>
+        <li>cleaner syntax</li>
+        <li>far less bloat</li>
+    </ul>
+    <ul class="build">
+        <li>compiles to Javascript</li>
+    </ul>
+</article>
+
+<article>
+    <h2>Wait! What? I though Javascript is the problem!</h2>
+</article>
+
+<article class="fill">
+    <h2 class="contrastBox">Javascript has good parts</h2>
+    <img src="images/javascript-the-good-parts-the-definitive-guide.jpg" width="600" height="450">
+
+    <div class='source contrastBox'>
+        Source: <a href="http://img.anongallery.org/img/2/0/javascript-the-good-parts-the-definitive-guide.jpg">Anongallery</a>
+    </div>
+</article>
+
+<article>
+    <ul>
+        <li>Coffee sticks to the good part</li>
+        <li>Coffee generates readable, pretty-printed Javascript</li>
+        <li>Coffee generats <a href="http://www.javascriptlint.com/">JSLint</a> compliant Javascript</li>
+        <li>Coffee gets rid of most WTFs</li>
+        <li>Interoperable with nearly all existing JS libraries (jQuery, Node, etc...)</li>
+    </ul>
+</article>
+
+<article>
+    <h3>Coffee Hello World</h3>
+
+    <pre id="helloCoffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="helloCoffee_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    if 1 == '1' then alert 'WTF?!' else alert ':-)'
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'helloCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'helloCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('helloCoffee')
+    </script>
+</article>
+
+<article>
+    <h3>One caveat...</h3>
+
+    <div class="build">
+        <p class="centered">significant whitespace instead of braces</p>
+        <img src="images/why.jpg" width="360" height="270" class="centered"/>
+    </div>
+</article>
+
+<article>
+    <h3>Coffee Methods</h3>
+
+    <pre id="scopeCoffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="scopeCoffee_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    hello = (name) ->
+        greeting = "Hello #{name}"
+    alert hello 'World'
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'scopeCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'scopeCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('scopeCoffee')
+    </script>
+</article>
+
+<article>
+    <h3>Coffee Object Model</h3>
+
+    <pre id="objectiveCoffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="objectiveCoffee_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    class Developer
+        constructor: (@name, @favoriteBrewStyle) ->
+
+        brew: ->
+            alert "Brewing #{@favoriteBrewStyle}"
+    mo = new Developer "Moritz", "Espresso"
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'objectiveCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'objectiveCoffee')"
+            onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('objectiveCoffee')
+    </script>
+</article>
+
+<article>
+    <h3>Coffee Goodies - while/until returns an array</h3>
+
+    <pre id="goodies1_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="goodies1_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    count = 0
+    addicted = until count > 5
+        count++
+        "Drinking Coffee #{count}"
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'goodies1')" onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'goodies1')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <p>
+        <code>["Drinking Coffee 1", "Drinking Coffee 2", "Drinking Coffee 3", "Drinking Coffee 4", "Drinking Coffee 5",
+            "Drinking Coffee 6"]</code>
+    </p>
+    <script type="text/javascript">
+        manageLiveCoding('goodies1')
+    </script>
+</article>
+
+<article>
+    <h3>Coffee Goodies - the ?</h3>
+
+    <pre id="goodies2_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="goodies2_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    if foo?
+        alert "Foo: #{foo.toUpperCase()}"
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'goodies2')" onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'goodies2')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('goodies2')
+    </script>
+</article>
+
+<article>
+    <h3>Coffee Goodies - List comprehension</h3>
+
+    <pre id="goodies3_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>
+    <pre id="goodies3_src" contenteditable="true" class="prettyprint">
+&lt;script type="text/coffeescript">
+    list = [1 .. 10]
+    evenDoubled = (item * 2 for item in list when (item % 2 == 0))
+    alert(evenDoubled)
+&lt;/script></pre>
+
+    <button class="refresh" onclick="return refreshLiveCoffee(event, 'goodies3')" onkeydown="return onKeyDown(event)">
+        Generate
+    </button>
+    <button class="refresh" onclick="return executeLiveCoffee(event, 'goodies3')" onkeydown="return onKeyDown(event)">
+        Execute
+    </button>
+    <script type="text/javascript">
+        manageLiveCoding('goodies3')
+    </script>
+</article>
+
+<article>
     <h3>Coffee Test Slide</h3>
 
     <pre id="coffee_embed" contenteditable="false" class="prettyprint">// Generated Javascript:</pre>

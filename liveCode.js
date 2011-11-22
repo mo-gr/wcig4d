@@ -51,7 +51,7 @@ function executeLiveCoffee(e, basename) {
         html = html.replace(/<script type=\"text\/coffeescript\">([^<]*)<\/script>/, '');
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.innerText = CoffeeScript.compile(scriptCode, {bare:false});
+        script.innerText = CoffeeScript.compile(scriptCode, {bare:true});
         console.log('scripts: ' + script.innerText);
         document.body.appendChild(script);
     }
