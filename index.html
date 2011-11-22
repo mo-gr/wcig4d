@@ -15,8 +15,10 @@
     <title>Why coffee is good for developers</title>
 
     <meta charset='utf-8'>
-    <script
-            src='slides.js'></script>
+    <script src='jquery.min.js'></script>
+    <script src='slides.js'></script>
+    <script src='liveCode.js'></script>
+    <script src='coffee-script.js'></script>
 </head>
 
 <style>
@@ -27,58 +29,6 @@
 </style>
 
 <body style='display: none'>
-
-<script type="text/javascript">
-    function $(element) {
-        return document.getElementById(element);
-    }
-
-    function refreshLiveCoding(e, basename) {
-        var src = $(basename + '_src');
-        var dst = $(basename + '_embed');
-        var html = src.innerText;
-        var scripts = /<script type=\"text\/javascript\">([^<]*)<\/script>/i.exec(html);
-        console.log('scripts: ' + scripts);
-        if ( scripts ) {
-            var scriptCode = scripts[1];
-            html = html.replace(/<script>[^<]*<\/script>/, '');
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.innerText = scriptCode;
-            document.body.appendChild(script);
-        }
-        dst.innerHTML = html;
-        if ( e ) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-        try {
-            initstars();
-        } catch (e) {
-        }
-        return false;
-    }
-
-    // Sync a contenteditable containing html with a div containing the result.
-    function manageLiveCoding(basename) {
-        var src = $(basename + '_src');
-        //refreshLiveCoding(null, basename);
-        src.addEventListener('keydown', function (e) {
-            if ( e.keyCode == 9 )  // tab
-                return true;
-            window.setTimeout(function () {
-                //refreshLiveCoding(null, basename);
-            }, 0);
-            e.stopPropagation();
-            return false;
-        }, false);
-        src.addEventListener('blur', function (e) {
-            window.setTimeout(function () {
-                prettyPrint();
-            }, 0);
-        }, false);
-    }
-</script>
 
 <section class='slides layout-regular template-akquinet'>
 
@@ -220,7 +170,9 @@ slides below. -->
 <article>
     <div class="build">
         <p>I could go on and on and on...</p>
+
         <p>Javascript is a language full of surprises.</p>
+
         <p>
             Many more at <a href="http://wtfjs.com/">wtfjs.com</a>
         </p>
@@ -228,7 +180,7 @@ slides below. -->
 </article>
 <!--TEMPLATE -->
 
-<article>
+<!--article>
     <p>
         This is a slide with just text. This is a slide with just text.
         This is a slide with just text. This is a slide with just text.
@@ -551,7 +503,7 @@ slides below. -->
         <li>
             <a href='http://www.google.com'>google.com</a>
     </ul>
-</article>
+</article-->
 
 </section>
 

@@ -425,7 +425,7 @@ li::before {
 }
 
 pre {
-    font-family: 'Droid Sans Mono', 'Courier New', monospace;
+    font-family: 'Menlo', 'Courier New', monospace;
 
     font-size: 20px;
     line-height: 28px;
@@ -446,7 +446,7 @@ pre {
 
 code {
     font-size: 95%;
-    font-family: 'Droid Sans Mono', 'Courier New', monospace;
+    font-family: 'Menlo', 'Courier New', monospace;
 
     color: black;
 }
