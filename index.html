@@ -84,8 +84,15 @@ slides below. -->
 </article>
 
 <article>
-    <img class="centered" src="images/coffee%207.png" width="696" height="511"/>
-
+    <img class="centered protected" src="images/coffee%207.png" width="696" height="511"/>
+    <!-- for demo of dev-tools -->
+    <script type="text/javascript">
+        guard = function(event) {
+            alert('Download forbidden');
+            return false;
+        };
+        $('.protected').on('click rightclick contextmenu dragstart', guard);
+    </script>
     <div class='source contrastBox'>
         Source: <a href="http://theoatmeal.com/comics/coffee">The Oatmeal</a>
     </div>
@@ -567,6 +574,19 @@ slides below. -->
     <script type="text/javascript">
         manageLiveCoding('goodies3')
     </script>
+</article>
+
+<article>
+    <h3>More sugar?</h3>
+
+    <ul class="build">
+        <li>default values for function arguments</li>
+        <li><code>if / unless</code> can be used as postfix</li>
+        <li>syntax for map-iteratrion (<code>for key, value of map</code>)</li>
+        <li>aliases for more readable code (<code>not/!, is/==, and/&&</code>)</li>
+        <li>matched array assignments (enables multiple return from methods)</li>
+        <li>support for splats (varargs)</li>
+    </ul>
 </article>
 
 <article>
