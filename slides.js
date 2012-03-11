@@ -558,7 +558,7 @@ function addGeneralStyle() {
   el.rel = 'stylesheet';
   el.type = 'text/css';
   el.charset = 'utf-8';
-  el.href = PERMANENT_URL_PREFIX + 'styles.css';
+  el.href = PERMANENT_URL_PREFIX + 'styles.old.css';
   document.body.appendChild(el);
 
   var el = document.createElement('meta');
