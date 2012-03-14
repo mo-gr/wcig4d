@@ -88,7 +88,8 @@ toArray(impress.childNodes).forEach(
 
 impress.appendChild canvas
 
-steps = $$(".step", impress)
+#steps = $$(".step", impress)
+steps = $$("article", impress)
 
 ###
 Setup the document
