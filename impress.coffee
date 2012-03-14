@@ -224,6 +224,8 @@ selectNext = () ->
 Event Listener
 ###
 document.addEventListener("keydown", (event) ->
+  if event.target.tagName == "PRE"
+    return
   if event.keyCode in [33, 37, 38]
     selectPrev()
     event.preventDefault()

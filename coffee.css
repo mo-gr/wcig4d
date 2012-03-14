@@ -122,14 +122,23 @@ article {
     line-height: 1.5;
 }
 
+.line {
+    border-top: 1px;
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* fade out inactive slides */
 
 article {
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
+    -webkit-transition: opacity 1s, visibility 1s;
+    -moz-transition:    opacity 1s, visibility 1s;
+    -ms-transition:     opacity 1s, visibility 1s;
+    -o-transition:      opacity 1s, visibility 1s;
+    transition:         opacity 1s, visibility 1s;
 }
 
 article:not(.active) {
@@ -138,6 +147,7 @@ article:not(.active) {
 
 article.hidden:not(.active) {
     opacity: 0;
+    visibility: hidden;
 }
 
 article h1 {

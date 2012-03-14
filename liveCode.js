@@ -1,82 +1,60 @@
 function refreshLiveCoding(e, basename) {
-    var src = $('#' + basename + '_src')[0];
-    var dst = $('#' + basename + '_embed')[0];
+    var src = document.getElementById( basename + '_src');
+    src = src || document.getElementById( basename );
     var html = src.innerText;
-    var scripts = /<script type=\"text\/javascript\">([^<]*)<\/script>/i.exec(html);
-    console.log('scripts: ' + scripts);
-    if ( scripts ) {
-        var scriptCode = scripts[1];
-        html = html.replace(/<script>[^<]*<\/script>/, '');
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.innerText = scriptCode;
-        document.body.appendChild(script);
+    var script = html.replace("<script type=\"text/javascript\">", "").replace("</script>", "");
+    console.log('script:\n' + script);
+    if ( script ) {
+        var scriptTag = document.createElement('script');
+        scriptTag.type = 'text/javascript';
+        scriptTag.innerText = script;
+        document.body.appendChild(scriptTag);
     }
-    dst.innerHTML = html;
     if ( e ) {
         e.preventDefault();
         e.stopPropagation();
-    }
-    try {
-        initstars();
-    } catch (e) {
     }
     return false;
 }
 
 function refreshLiveCoffee(e, basename) {
-    var src = $('#' + basename + '_src')[0];
-    var dst = $('#' + basename + '_embed')[0];
+    var src = document.getElementById( basename + '_src');
+    var dst = document.getElementById( basename + '_embed');
     var html = src.innerText;
-    var scripts = /<script type=\"text\/coffeescript\">([^<]*)<\/script>/i.exec(html);
-    dst.innerHTML = '// Generated Javascript:\n' + CoffeeScript.compile(scripts[1], {bare:true});
+    var script = html.replace("<script type=\"text/coffeescript\">", "").replace("</script>", "");
+    console.log(script);
+    dst.innerHTML = '// Generated Javascript:\n' + CoffeeScript.compile(script, {bare:true});
     prettyPrint();
     if ( e ) {
         e.preventDefault();
         e.stopPropagation();
     }
-    try {
-        initstars();
-    } catch (e) {
-    }
     return false;
 }
 
 function executeLiveCoffee(e, basename) {
-    var src = $('#' + basename + '_src')[0];
+    var src = document.getElementById(basename + '_src');
     var html = src.innerText;
-    var scripts = /<script type=\"text\/coffeescript\">([^<]*)<\/script>/i.exec(html);
-    if ( scripts ) {
-        var scriptCode = scripts[1];
+    var script = html.replace("<script type=\"text/coffeescript\">", "").replace("</script>", "");
+    if ( script ) {
         html = html.replace(/<script type=\"text\/coffeescript\">([^<]*)<\/script>/, '');
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.innerText = CoffeeScript.compile(scriptCode, {bare:true});
-        console.log('scripts: ' + script.innerText);
-        document.body.appendChild(script);
+        var scriptTag = document.createElement('script');
+        scriptTag.type = 'text/javascript';
+        scriptTag.innerText = CoffeeScript.compile(script, {bare:true});
+        console.log('script: ' + scriptTag.innerText);
+        document.body.appendChild(scriptTag);
     }
     if ( e ) {
         e.preventDefault();
         e.stopPropagation();
-    }
-    try {
-        initstars();
-    } catch (e) {
     }
     return false;
 }
 
 // Sync a contenteditable containing html with a div containing the result.
 function manageLiveCoding(basename) {
-    var src = $('#' + basename + '_src')[0];
-    src.addEventListener('keydown', function (e) {
-        if ( e.keyCode == 9 )  // tab
-            return true;
-        window.setTimeout(function () {
-        }, 0);
-        e.stopPropagation();
-        return false;
-    }, false);
+    var src = document.getElementById( basename + '_src');
+    src = src || document.getElementById( basename );
     src.addEventListener('blur', function (e) {
         window.setTimeout(function () {
             prettyPrint();
