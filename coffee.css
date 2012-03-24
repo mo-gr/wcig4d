@@ -139,6 +139,16 @@ article {
     -ms-transition:     opacity 1s, visibility 1s;
     -o-transition:      opacity 1s, visibility 1s;
     transition:         opacity 1s, visibility 1s;
+    position: relative;
+}
+
+article.quick {
+    -webkit-transition: opacity 0.1s, visibility 0.1s;
+    -moz-transition:    opacity 0.1s, visibility 0.1s;
+    -ms-transition:     opacity 0.1s, visibility 0.1s;
+    -o-transition:      opacity 0.1s, visibility 0.1s;
+    transition:         opacity 0.1s, visibility 0.1s;
+    position: relative;
 }
 
 article:not(.active) {
@@ -169,8 +179,33 @@ article.slide {
     box-shadow: 0 8px 34px rgba(0, 0, 0, .3);
 }
 
+.centered {
+    text-align: center;
+}
+
+article p {
+    width: 80%;
+    margin: 20px auto;
+}
+
 article.title {
     background: url("images/coffee 2.jpg") -100px -50px;
+}
+
+article.agenda {
+    background: url("images/coffee 1.jpg") -100px -50px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #191932;
+}
+
+.whiteText {
+    color: #fff;
+    text-shadow: 2px 2px 2px #191932;
+}
+
+.blackText {
+    color: #191932;
+    text-shadow: 2px 2px 2px #fff;
 }
 
 article.title a, article.title p {
@@ -179,4 +214,61 @@ article.title a, article.title p {
     text-shadow: 2px 2px 2px #191932;
     text-align: center;
     margin-top: 20px;
+}
+
+ul {
+    padding: 40px;
+}
+
+li {
+    list-style: disc;
+    font-size: 0.9em;
+    padding: 15px;
+}
+
+img.belt {
+    position: absolute;
+    top: 30%;
+    left: 51px;
+}
+
+.contrastBox {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+li.highlighted {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.source {
+    position: absolute;
+    bottom: 20px;
+    padding-right: 175px;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+article.facts {
+    background: url("images/Kaffeebaum.jpg");
+}
+
+article.secondMost {
+    background: url("images/Bohnen.jpg");
+}
+
+article.busted {
+    color: #C05743;
+    text-shadow: 2px 2px 2px #fff;
+    font-family: American Typewriter;
+    font-size: 10em;
+}
+
+article.busted div {
+    -webkit-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
 }

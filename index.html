@@ -26,15 +26,81 @@
         <p><a href="mailto:moritz.grauel@akquinet.de" class="inline">moritz.grauel@akquinet.de</a></p>
     </article>
 
-    <article title="Agenda" data-x="0">
-        <ul class="build">
-            <li class="contrastBox">Interesting facts about coffee</li>
-            <li class="contrastBox">Popular brewing methods</li>
-            <li class="contrastBox">Effects on humans and developers</li>
+    <article data-x="0" class="slide agenda">
+        <h2>Agenda</h2>
+        <ul>
+            <li>Interessantes über Kaffee</li>
+            <li>Populäre Zubereitungen</li>
+            <li>Effekte auf Menschen und Entwickler</li>
         </ul>
     </article>
 
-    <article class="hidden" data-x="1000">
+    <article data-x="0" class="slide agenda hidden">
+        <h2>Agenda</h2>
+        <ul>
+            <li class="highlighted">Interessantes über Kaffee</li>
+            <li>Populäre Zubereitungen</li>
+            <li>Effekte auf Menschen und Entwickler</li>
+        </ul>
+    </article>
+
+    <article data-x="1000" class="slide facts">
+    </article>
+
+    <article data-x="1000" class="slide facts hidden">
+        <div class="contrastBox">
+            <ul style="font-size: 0.9em;">
+                <li>Kaffee wächst auf Bäumen</li>
+                <li>Bohne ist Kern der Kaffeefrucht</li>
+                <li>botanisch gesehen keine Bohne</li>
+                <li>2 Kerne je Frucht</li>
+            </ul>
+        </div>
+        <div class='source contrastBox'>
+            Bildquelle: <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/FruitColors.jpg/800px-FruitColors.jpg">Wikimedia</a>
+        </div>
+    </article>
+
+    <article data-x="2000" class="slide belt">
+        <img src="images/coffee%205.png" alt="Coffeebelt" class="belt"
+                width="698" height="249"/>
+        <div class='source contrastBox'>
+            Bildquelle: <a href="http://theoatmeal.com/comics/coffee">The Oatmeal</a>
+        </div>
+    </article>
+
+    <article data-x="3000" class="slide centered secondMost whiteText">
+        <p>Kaffee ist weltweit am zweithäufigsten gehandelte Ware</p>
+        <p>(direkt nach Öl!)</p>
+    </article>
+
+    <article data-x="3000" class="busted centered hidden quick">
+        <div>BUSTED</div>
+    </article>
+
+    <article data-x="3000" data-z="-10" data-rotate-y="180" class="hidden blackText">
+        <h2 class="contrastBox">Zwischen Öl und Kaffee liegen unter anderem</h2>
+        <ul style="margin-left: 20px; padding-top: 0; padding-bottom: 0;">
+            <li>Kupfer</li>
+            <li>Gold</li>
+            <li>Weizen</li>
+            <li>Baumwolle</li>
+        </ul>
+        <div class='source contrastBox'>
+            Quelle: <a href="http://skeptics.stackexchange.com/questions/2430/is-coffee-the-most-traded-commodity-in-the-world-after-oil">[skeptics]</a>
+        </div>
+    </article>
+
+    <article data-x="0" data-y="1000" class="slide agenda">
+            <h2>Agenda</h2>
+            <ul>
+                <li>Interessantes über Kaffee</li>
+                <li class="highlighted">Populäre Zubereitungen</li>
+                <li>Effekte auf Menschen und Entwickler</li>
+            </ul>
+        </article>
+
+    <article class="hidden" data-x="1000" data-y="2000">
         <pre id="wtfEquals_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     if (1 == '1') alert("WTF?!");
@@ -42,7 +108,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfEquals')">Run</button>
     </article>
 
-    <article class="hidden" data-x="1000" data-z="-200">
+    <article class="hidden" data-x="1000" data-z="-200" data-y="1000">
         <pre id="coiffeeEquals_embed" contenteditable="false" class="prettyprint lang-javascript generated">
 // Generated Javascript:
         </pre>
