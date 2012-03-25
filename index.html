@@ -117,8 +117,8 @@
         </ul>
     </article>
 
-    <article data-z="10000" data-x="1000" data-y="1000" class="overview"></article>
-    <article data-z="10000" data-x="1000" data-y="1000" class="cssucks hidden quick centered">
+    <article data-z="10000" data-x="2000" data-y="2000" class="overview"></article>
+    <article data-z="10000" data-x="2000" data-y="2000" class="cssucks hidden quick centered">
         <div>Client-Side Scripting sucks!</div>
     </article>
 
@@ -255,12 +255,139 @@
         <div class="centered" style="margin-top: 70px;">...stinkt.</div>
     </article>
 
-    <article class="hidden" data-x="1000" data-y="2000">
+    <article data-x="5000" data-y="3000" class="slide centered">
+        <h1 class="blackText">Ein paar Beispiele</h1>
+    </article>
+
+    <article class="slide hidden" data-x="5000" data-y="3000">
+        <img src="images/wtfperminute.jpg" width="500" height="453" style="position: absolute; left: 150px; top: 30px;">
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000">
         <pre id="wtfEquals_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
+    /* equals - how hard can it be? */
     if (1 == '1') alert("WTF?!");
 &lt;/script></pre>
         <button onclick="return refreshLiveCoding(event, 'wtfEquals')">Run</button>
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-100">
+        <pre id="wtfMath_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    /* It's math - I know math! */
+    if (Math.min() > Math.max()) {
+        alert('WTF?!');
+    }
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfMath')">Run</button>
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-200">
+        <pre id="wtfNumber_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    /* What is your favorite Number? */
+    alert('My favorite number is: '
+            + 9999999999999999);
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfNumber')">Run</button>
+    </article>
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-300">
+        <pre id="wtfTransitive_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    /* Is this even possible? */
+    if (5 < 4 < 1) alert ('WTF?!')
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfTransitive')">Run</button>
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-400">
+        <pre id="wtfBatman_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    /* My favorite */
+    var wat = Array(16).join("wtf" - 1)
+        + " Batman!";
+    alert(wat);
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfBatman')">Run</button>
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-500">
+        <pre id="wtfBrackets_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    /* Well... uhm...*/
+    if ('10' == ++[[]][+[]]+[+[]]) {
+        alert('WTF?!')
+    }
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfBrackets')">Run</button>
+    </article>
+
+    <article class="hidden" data-x="6000" data-y="3000" data-z="-500">
+        <pre id="wtfScope_src" contenteditable="true" class="prettyprint lang-javascript">
+&lt;script type="text/javascript">
+    function hello(nameParam) {
+        greeting = 'Hello ' + nameParam;
+        return greeting;
+    }
+    alert('1st: ' + hello('World'));
+    alert('2nd: ' + greeting);
+&lt;/script></pre>
+        <button onclick="return refreshLiveCoding(event, 'wtfScope')">Run</button>
+    </article>
+
+    <article class="hidden centered" data-x="6000" data-y="3000" data-z="-1000">
+        Genug?
+    </article>
+
+    <article data-x="7000" data-y="3000" class="slide hidden centered">
+            <div style="margin-top: 30px;">JavaScript ist voll spannender Überraschungen.</div>
+            <div style="margin-top: 30px;">Mehr davon: <a href="http://wtfjs.com/">wtfjs.com</a></div>
+    </article>
+
+    <article class="slide centered" data-x="-1000" data-y="4000">
+        <h2>Gibt es wirklich keine Alternativen?</h2>
+    </article>
+
+    <article class="slide hidden centered" data-x="-1000" data-y="4000">
+        <h2>Gibt es wirklich keine Alternativen?</h2>
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
+    </article>
+
+    <article class="slide hidden centered" data-x="-1000" data-y="4000">
+        <h2>Gibt es wirklich keine Alternativen?</h2>
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
+        <div style="margin-top: 40px;">Nein.</div>
+    </article>
+
+    <article class="slide hidden centered" data-x="-1000" data-y="4000">
+        <h2>Gibt es wirklich keine Alternativen?</h2>
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
+        <div style="margin-top: 40px;">Nein.</div>
+        <div style="margin-top: 40px;">Ende.</div>
+    </article>
+
+    <article class="hidden centered blackText" data-x="-1000" data-y="4000" data-z="-1000">
+        Moment mal...
+    </article>
+
+    <article data-x="0" data-y="4000" class="slide" id="hello-coffeescript-slide">
+        <style>
+            #hello-coffeescript-slide a {
+                color: #191932 !important;
+                text-decoration: none;
+                font-size: 102px;
+                padding: 0;
+                top: 0;
+                margin-top: 170px;
+                padding-left: 150px;
+                margin-left: 20px;
+                height: 128px;
+                display: block;
+                background: url("images/coffeescript_logo.png") no-repeat;
+            }
+        </style>
+            <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a>
     </article>
 
     <article class="hidden" data-x="1000" data-z="-200" data-y="1000">
