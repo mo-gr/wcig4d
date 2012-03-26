@@ -251,6 +251,9 @@ window.addEventListener("hashchange", () ->
   select getElementFromUrl()
 , false)
 
+document.selectNextSlide = selectNext
+document.selectPrevSlide = selectPrev
+
 ###
 start impress
 ###
