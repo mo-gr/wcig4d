@@ -46,6 +46,11 @@ pre.smaller {
     font-size: 25px;
 }
 
+pre.tiny {
+    font-size: 12px;
+    line-height: 13px;
+}
+
 .generated {
     opacity: 0.6;
 }

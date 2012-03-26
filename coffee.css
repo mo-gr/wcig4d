@@ -272,6 +272,12 @@ article.secondMost {
     background: url("images/Bohnen.jpg");
 }
 
+article.features {
+    background: url("images/espresso.jpg");
+    background-size: 100%;
+    background-position: 0 -160px;
+}
+
 article.busted {
     color: #C05743;
     text-shadow: 2px 2px 2px #fff;

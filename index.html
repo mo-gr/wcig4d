@@ -117,7 +117,7 @@
         </ul>
     </article>
 
-    <article data-z="10000" data-x="2000" data-y="2000" class="overview"></article>
+    <article data-z="10000" data-x="2000" data-y="2000" class="overview" id="overview"></article>
     <article data-z="10000" data-x="2000" data-y="2000" class="cssucks hidden quick centered">
         <div>Client-Side Scripting sucks!</div>
     </article>
@@ -345,7 +345,7 @@
             <div style="margin-top: 30px;">Mehr davon: <a href="http://wtfjs.com/">wtfjs.com</a></div>
     </article>
 
-    <article class="slide centered" data-x="-1000" data-y="4000"data-z="-1">
+    <article class="slide centered" data-x="-1000" data-y="4000" data-z="-1">
         <h2>Gibt es wirklich keine Alternativen?</h2>
     </article>
 
@@ -516,7 +516,7 @@ $(document).ready () ->
 </pre>
     </article>
     <article class="hidden nesting" data-x="6000" data-y="4000">
-        <pre id="nesting4_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+        <pre id="nesting5_src" contenteditable="false" class="prettyprint lang-javascript smaller">
 # CoffeeScript version
 $(document).ready () ->
   $(".hideable").each (index, item) ->
@@ -526,7 +526,7 @@ $(document).ready () ->
 </pre>
     </article>
     <article class="hidden nesting" data-x="6000" data-y="4000">
-        <pre id="nesting4_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+        <pre id="nesting6_src" contenteditable="false" class="prettyprint lang-javascript smaller">
 // CoffeeScript compiler output
 $(document).ready(function() {
   return $(".hideable").each(function(index, item) {
@@ -537,6 +537,126 @@ $(document).ready(function() {
     });
   });
 });</pre>
+    </article>
+
+    <article class="slide features" data-x="-1000" data-y="5000">
+        <h2 class="contrastBox">Mehr Zucker im Kaffee?</h2>
+    </article>
+
+    <article class="hidden" data-y="5000" id="variableInterpolation">
+        <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    drink = "Kaffee"
+    alert "Das beste Getränk ist #{drink}"
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="stringInter_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'stringInter')">Compile</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="correctScope">
+        <pre id="scope_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    fill = (container, liquid = "Kaffee") ->
+      msg = "Fülle #{liquid} in #{container}"
+      alert msg
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="scope_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'scope')">Compile</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="existential">
+        <pre id="existential_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    if not coffee? then alert "panic"
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="existential_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'existential')">Compile</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="repeatArray">
+        <pre id="repeatArray_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    count = 0
+    addicted = until count > 5
+        count++
+        "Drinking Coffee #{count}"
+    alert addicted
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="repeatArray_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'repeatArray')">Compile</button>
+        <button onclick="return executeLiveCoffee(event, 'repeatArray')">Run</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="listComprehension1">
+        <pre id="listComprehension1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    for x in [1..10]
+        alert x
+    myLikes = { 'Espresso': true, 'Tea': false }
+    for key, value of myLikes
+        alert("I like #{key}") if value
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="listComprehension1_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'listComprehension1')">Compile</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="listComprehension2">
+        <pre id="listComprehension2_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+list = [1 .. 10]
+evenDoubled =
+      (i * 2 for i in list when (i % 2 == 0))
+alert evenDoubled
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="listComprehension2_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return executeLiveCoffee(event, 'listComprehension2')">Run</button>
+    </article>
+
+    <article class="hidden" data-y="5000" id="assign">
+        <pre id="assign_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+fooBar = (baz) -> ["Foo#{baz}", "Bar#{baz}"]
+[foo, bar] = fooBar(42)
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="assign_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'assign')">Compile</button>
+    </article>
+
+    <article class="hidden blackText centered" data-x="1000" data-y="5000">
+        Objekt Orientierung in JavaScript?
+        </article>
+
+    <article class="hidden blackText centered" data-x="1000" data-y="5000">
+        <img src="images/proto.png" width="640" height="480" style="left: 80px; top: -200px;"/>
+    </article>
+
+    <article class="hidden" data-x="1000" data-y="5000" id="object1">
+        <pre id="object1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+class Person
+  constructor: (@name)
+  hi: ->
+    alert "Hi #{@name}"
+
+class Developer extends Person
+  constructor: (@name, @favoriteBrewStyle) ->
+    super name
+  brew: ->
+    alert "Brewing #{@favoriteBrewStyle}"
+
+mo = new Developer "Moritz", "Espresso"</pre>
+        <button onclick="refreshLiveCoffee(event, 'object1'); document.selectNextSlide(); return false;">Compile</button>
+    </article>
+
+    <article class="hidden" data-x="1000" data-y="5000" id="object1Out">
+        <pre id="object1_embed" contenteditable="true" class="prettyprint lang-javascript tiny"></pre>
+
     </article>
 
 </div>
