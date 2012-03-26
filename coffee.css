@@ -304,3 +304,7 @@ article.busted div {
     display: block;
     background: url("images/coffeescript_logo.png") no-repeat;
 }
+
+article.nesting pre {
+    height: 333px;
+}

@@ -438,19 +438,19 @@
     </article>
 
     <article class="hidden" data-x="4000" data-y="4000">
-        <pre id="coiffeeEquals_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller">
+        <pre id="coffeeEquals_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller">
 // Generated Javascript:
         </pre>
         <div class="line"></div>
-        <pre id="coiffeeEquals_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+        <pre id="coffeeEquals_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     if (1 == '1')
         alert("WTF?!")
     else
         alert("Unicorns!")
 &lt;/script></pre>
-        <button onclick="return refreshLiveCoffee(event, 'coiffeeEquals')">Compile</button>
-        <button onclick="return executeLiveCoffee(event, 'coiffeeEquals')">Run</button>
+        <button onclick="return refreshLiveCoffee(event, 'coffeeEquals')">Compile</button>
+        <button onclick="return executeLiveCoffee(event, 'coffeeEquals')">Run</button>
     </article>
 
     <article class="hidden centered blackText" data-x="5000" data-y="4000">
@@ -460,6 +460,85 @@
     <article class="hidden centered blackText" data-x="5000" data-y="4000">
        <img src="images/sigWhitespace.png" width="552" height="414" style="left: 126px; top: -180px;"/>
     </article>
+
+    <article class="hidden nesting" data-x="5000" data-y="4000">
+        <pre id="nesting0_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+$(document).ready(function() {
+  $(".hideable").each(function(index, item) {
+    $(item).on("click", function(event) {
+      $(event.target).slideUp(1000, function() {
+        console.log('animation complete');
+      });
+    });
+  });
+});</pre>
+    </article>
+    <article class="hidden nesting" data-x="5000" data-y="4000">
+        <pre id="nesting1_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+$(document).ready(function() {
+  $(".hideable").each(function(index, item) {
+    $(item).on("click", function(event) {
+      $(event.target).slideUp(1000, function() {
+        console.log('animation complete')
+      })
+    })
+  })
+})</pre>
+    </article>
+    <article class="hidden nesting" data-x="5000" data-y="4000">
+        <pre id="nesting2_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+$(document).ready(function()
+  $(".hideable").each(function(index, item)
+    $(item).on("click", function(event)
+      $(event.target).slideUp(1000, function()
+        console.log('animation complete')
+      )
+    )
+  )
+)</pre>
+    </article>
+    <article class="hidden nesting" data-x="5000" data-y="4000">
+        <pre id="nesting3_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+$(document).ready function()
+  $(".hideable").each function(index, item)
+    $(item).on "click", function(event)
+      $(event.target).slideUp 1000, function()
+        console.log('animation complete')
+</pre>
+    </article>
+    <article class="hidden nesting" data-x="5000" data-y="4000">
+        <pre id="nesting4_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+$(document).ready () ->
+  $(".hideable").each (index, item) ->
+    $(item).on "click", (event) ->
+      $(event.target).slideUp 1000, () ->
+        console.log('animation complete')
+</pre>
+    </article>
+    <article class="hidden nesting" data-x="6000" data-y="4000">
+        <pre id="nesting4_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+# CoffeeScript version
+$(document).ready () ->
+  $(".hideable").each (index, item) ->
+    $(item).on "click", (event) ->
+      $(event.target).slideUp 1000, () ->
+        console.log('animation complete')
+</pre>
+    </article>
+    <article class="hidden nesting" data-x="6000" data-y="4000">
+        <pre id="nesting4_src" contenteditable="false" class="prettyprint lang-javascript smaller">
+// CoffeeScript compiler output
+$(document).ready(function() {
+  return $(".hideable").each(function(index, item) {
+    return $(item).on("click", function(event) {
+      return $(event.target).slideUp(1000, function() {
+        return console.log('animation complete');
+      });
+    });
+  });
+});</pre>
+    </article>
+
 </div>
 
 <script src="impress.js"></script>
