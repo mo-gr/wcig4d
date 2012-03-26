@@ -272,6 +272,12 @@ article.secondMost {
     background: url("images/Bohnen.jpg");
 }
 
+article.where {
+    background: url("images/espresso2.jpg");
+    background-size: 870px;
+    background-position: -35px -105px;
+}
+
 article.features {
     background: url("images/espresso.jpg");
     background-size: 100%;
