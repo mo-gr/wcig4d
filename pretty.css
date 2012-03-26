@@ -42,6 +42,10 @@ pre {
     font-size: 30px;
 }
 
+pre.smaller {
+    font-size: 25px;
+}
+
 .generated {
     opacity: 0.6;
 }

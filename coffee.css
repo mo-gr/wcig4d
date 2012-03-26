@@ -102,6 +102,7 @@ body {
 a.inline {
     color: black;
     text-decoration: none;
+    font-style: italic;
 }
 
 /* COMMON STEP STYLES */
@@ -238,6 +239,10 @@ img.problem {
     top: 70px;
 }
 
+article img {
+    position: absolute;
+}
+
 .contrastBox {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
@@ -284,4 +289,18 @@ article.cssucks {
 article.busted div {
     -webkit-transform: rotateZ(-30deg);
     transform: rotateZ(-30deg);
+}
+
+#hello-coffeescript-slide a {
+    color: #191932 !important;
+    text-decoration: none;
+    font-size: 102px;
+    padding: 0;
+    top: 0;
+    margin-top: 170px;
+    padding-left: 150px;
+    margin-left: 20px;
+    height: 128px;
+    display: block;
+    background: url("images/coffeescript_logo.png") no-repeat;
 }
