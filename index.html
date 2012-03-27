@@ -20,7 +20,7 @@
         <p>For the best experience please use the latest <strong>Chrome</strong> or <strong>Safari</strong> browser.</p>
     </div>
 
-    <article class="slide title" data-x="-1000">
+    <article class="slide title" data-x="-1000" id="title" data-z="100">
         <h1>
             Why coffee is good for developers
         </h1>
@@ -732,10 +732,44 @@ mo = new Developer "Moritz", "Espresso"</pre>
 &lt;/plugin></pre>
     </article>
 
-<!--TODO Caveats-->
-<!--TODO exit strategie-->
-<!--TODO Dart vergleich-->
-<!--TODO thankyou-->
+    <article data-x="4000" data-y="5000" class="slide">
+        <h2 class="centered">Ein paar Warnungen</h2>
+        <img src="images/warn.jpg" width="300" height="271" alt="Warning" style="left:250px; top:120px;"/>
+    </article>
+
+    <article data-x="4000" data-y="5000" data-z="-1" data-rotate-y="180" class="blackText slide" style="background-color: rgba(255,255,255,0.66)">
+        <ul>
+            <li>Nicht WTF frei
+                <div class="comment italic">keine eigene Laufzeit</div>
+            </li>
+            <li>Syntax-Zucker-Schock
+                <div class="comment italic">Komplexe Einzeiler sind verlockend aber böse</div>
+            </li>
+            <li>Indirektes Debugging
+                <div class="comment italic">Debugger sieht JavaScript</div>
+            </li>
+        </ul>
+    </article>
+
+    <article class="slide" data-x="5000" data-y="5000">
+        <h2>CoffeeScript...</h2>
+        <ul>
+            <li>ist leicht zu lernen.</li>
+            <li>macht mehr Spaß als JavaScript.</li>
+            <li>nagelt niemanden fest.</li>
+        </ul>
+    </article>
+
+    <article data-z="10000" data-x="2000" data-y="2000" class="overview hidden centered blackText" id="thanks">
+        <div style="font-size: 60px;">Vielen Dank</div>
+        <a href="http://blog.notadomain.com" style="font-size: 40px;" class="blackText">Moritz Grauel</a><br/>
+        <a href="https://twitter.com/#!/mo_gr" style="font-size: 40px;" class="blackText">@mo_gr</a><br/>
+        <a href="mailto:moritz.grauel@akquinet.de" style="font-size: 40px;" class="blackText">moritz.grauel@akquinet.de</a>
+    </article>
+
+    <article data-z="10000" data-x="2000" data-y="2000" class="overview hidden centered blackText" id="end"/>
+
+    <!--TODO thankyou-->
 <!--TODO brewing methods-->
 <!--TODO effekt auf entwickler-->
 </div>

@@ -121,6 +121,8 @@ article {
 
     font-size: 48px;
     line-height: 1.5;
+
+    z-index: 1;
 }
 
 .line {
@@ -325,4 +327,14 @@ article div.comment {
     font-size: 35px;
     padding-left: 20px;
     color: #555;
+}
+
+.italic {
+    font-style: italic;
+}
+
+a.blackText {
+    color: #191932;
+    text-shadow: 2px 2px 2px #fff;
+    text-decoration: none;
 }
