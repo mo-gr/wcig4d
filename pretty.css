@@ -46,6 +46,10 @@ pre.smaller {
     font-size: 25px;
 }
 
+pre.smallest {
+    font-size: 16px;
+}
+
 pre.tiny {
     font-size: 12px;
     line-height: 13px;

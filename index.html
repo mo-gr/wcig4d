@@ -689,7 +689,49 @@ mo = new Developer "Moritz", "Espresso"</pre>
         </ul>
     </article>
 
-<!--TODO Maven Plugin demo-->
+    <article data-x="3000" data-y="5000" class="slide">
+        <h2>Maven Optionen</h2>
+        <ul>
+            <li>
+                <a href="https://github.com/iron9light/coffeescript-maven-plugin" class="inline">coffeescript-maven-plugin</a>
+                <div class="comment">benötigt JDK 7</div>
+            </li>
+            <li>
+                <a href="https://github.com/jakewins/brew" class="inline">brew</a>
+                <div class="comment">nicht mehr aktuell</div>
+            </li>
+            <li>
+                <a href="https://github.com/talios/coffee-maven-plugin" class="inline">coffee-maven-plugin</a>
+                <div class="comment">keinen watch-mode</div>
+            </li>
+        </ul>
+    </article>
+
+    <article data-x="3000" data-y="6000" class="hidden">
+        <pre id="mvn_src" contenteditable="false" class="prettyprint lang-xml smallest">
+&lt;plugin>
+  &lt;groupId>com.theoryinpractise&lt;/groupId>
+  &lt;artifactId>coffee-maven-plugin&lt;/artifactId>
+  &lt;version>1.4.1&lt;/version>
+  &lt;configuration>
+    &lt;coffeeDir>${basedir}/src/main/webapp/resources/scripts&lt;/coffeeDir>
+    &lt;coffeeOutputDirectory>
+      ${project.build.directory}/${artifactId}-${version}/resources/scripts
+    &lt;/coffeeOutputDirectory>
+    &lt;bare>true&lt;/bare>
+    &lt;compileIndividualFiles>true&lt;/compileIndividualFiles>
+  &lt;/configuration>
+  &lt;executions>
+    &lt;execution>
+      &lt;id>coffee&lt;/id>
+      &lt;goals>
+        &lt;goal>coffee&lt;/goal>
+      &lt;/goals>
+    &lt;/execution>
+  &lt;/executions>
+&lt;/plugin></pre>
+    </article>
+
 <!--TODO Caveats-->
 <!--TODO exit strategie-->
 <!--TODO Dart vergleich-->

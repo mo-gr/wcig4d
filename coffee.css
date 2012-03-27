@@ -320,3 +320,9 @@ article.busted div {
 article.nesting pre {
     height: 333px;
 }
+
+article div.comment {
+    font-size: 35px;
+    padding-left: 20px;
+    color: #555;
+}
