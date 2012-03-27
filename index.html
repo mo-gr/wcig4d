@@ -20,7 +20,7 @@
         <p>For the best experience please use the latest <strong>Chrome</strong> or <strong>Safari</strong> browser.</p>
     </div>
 
-    <article class="slide title" data-x="-1000" id="title" data-z="100">
+    <article class="slide title" data-x="-1000" id="title">
         <h1>
             Why coffee is good for developers
         </h1>
@@ -85,15 +85,15 @@
         <div>BUSTED</div>
     </article>
 
-    <article data-x="3000" data-z="-10" data-rotate-y="180" class="hidden blackText">
-        <h2 class="contrastBox">Zwischen Öl und Kaffee liegen unter anderem</h2>
+    <article data-x="3000" data-rotate-y="180" class="hidden blackText slide" style="background-color: rgba(255,255,255,0.66)">
+        <h2>Zwischen Öl und Kaffee liegen unter anderem</h2>
         <ul style="margin-left: 20px; padding-top: 0; padding-bottom: 0;">
             <li>Kupfer</li>
             <li>Gold</li>
             <li>Weizen</li>
             <li>Baumwolle</li>
         </ul>
-        <div class='source contrastBox'>
+        <div class='source'>
             Quelle: <a
                 href="http://skeptics.stackexchange.com/questions/2430/is-coffee-the-most-traded-commodity-in-the-world-after-oil">[skeptics]</a>
         </div>
@@ -198,7 +198,7 @@
         <a href="http://jquery.org/">
             <img src="images/jquery.png" alt="jQuery" width="300" height="74" style="margin: 10px"/>
         </a>
-        <ul style="padding-top: 0; margin-left: 30px">
+        <ul style="padding-top: 100px; margin-left: 30px">
             <li>behebt alle DOM schmerzen</li>
             <li>extrem weit verbreitet</li>
             <li>verwendet jQuery!</li>
@@ -209,7 +209,7 @@
         <a href="http://jquery.org/">
             <img src="images/jquery.png" alt="jQuery" width="300" height="74" style="margin: 10px"/>
         </a>
-        <ul style="padding-top: 0; margin-left: 30px">
+        <ul style="padding-top: 100px; margin-left: 30px">
             <li>behebt alle DOM schmerzen</li>
             <li>extrem weit verbreitet</li>
             <li>verwendet jQuery!</li>
@@ -236,8 +236,8 @@
         </ul>
     </article>
 
-    <article data-x="3000" data-y="3000" data-z="-1000" class="hidden">
-        <img src="images/noLearn.png" width="640" height="480" style="margin-left: 40px;"/>
+    <article data-x="3000" data-y="3000" data-z="-1000" class="hidden centered" id="noLearn">
+        <img src="images/noLearn.png" width="640" height="480" style="left: 80px; top: -240px;"/>
     </article>
 
     <article data-x="4000" data-y="3000" class="slide">
@@ -351,19 +351,19 @@
 
     <article class="slide hidden centered" data-x="-1000" data-y="4000">
         <h2>Gibt es wirklich keine Alternativen?</h2>
-        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="left: 155px; margin-top: 40px;">
     </article>
 
     <article class="slide hidden centered" data-x="-1000" data-y="4000">
         <h2>Gibt es wirklich keine Alternativen?</h2>
-        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
-        <div style="margin-top: 40px;">Nein.</div>
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="left: 155px; margin-top: 40px;">
+        <div style="margin-top: 180px;">Nein.</div>
     </article>
 
     <article class="slide hidden centered" data-x="-1000" data-y="4000">
         <h2>Gibt es wirklich keine Alternativen?</h2>
-        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="margin-left: 50px; margin-top: 40px;">
-        <div style="margin-top: 40px;">Nein.</div>
+        <img src="images/alternatives.png" width="437" height="104" alt="Alternativen" style="left: 155px; margin-top: 40px;">
+        <div style="margin-top: 180px;">Nein.</div>
         <div style="margin-top: 40px;">Ende.</div>
     </article>
 
@@ -384,7 +384,7 @@
         </ul>
     </article>
 
-    <article data-x="1000" data-y="4000" class="slide">
+    <article data-x="1000" data-y="4000" class="slide hidden">
         <h2>Was ist CoffeeScript?</h2>
         <ul>
             <li>JavaScript without the fail™</li>
@@ -487,15 +487,15 @@ $(document).ready(function() {
     </article>
     <article class="hidden nesting" data-x="5000" data-y="4000">
         <pre id="nesting2_src" contenteditable="false" class="prettyprint lang-javascript smaller">
-$(document).ready(function()
-  $(".hideable").each(function(index, item)
-    $(item).on("click", function(event)
-      $(event.target).slideUp(1000, function()
+$(document).ready function() {
+  $(".hideable").each function(index, item) {
+    $(item).on "click", function(event) {
+      $(event.target).slideUp 1000, function() {
         console.log('animation complete')
-      )
-    )
-  )
-)</pre>
+      }
+    }
+  }
+}</pre>
     </article>
     <article class="hidden nesting" data-x="5000" data-y="4000">
         <pre id="nesting3_src" contenteditable="false" class="prettyprint lang-javascript smaller">
@@ -675,7 +675,7 @@ mo = new Developer "Moritz", "Espresso"</pre>
         <ul class="whiteText">
             <li>Serverseitige compilation</li>
             <li>Clientseitige compilation (nicht Empfohlen)</li>
-            <li>Maven Plugins verfügbar</li>
+            <li>Play 2.0</li>
         </ul>
     </article>
 
@@ -684,8 +684,8 @@ mo = new Developer "Moritz", "Espresso"</pre>
         <ul class="whiteText">
             <li>Serverseitige compilation</li>
             <li>Clientseitige compilation (nicht Empfohlen)</li>
-            <li>Maven Plugins verfügbar</li>
             <li>Play 2.0</li>
+            <li>Maven Plugins verfügbar</li>
         </ul>
     </article>
 
@@ -737,7 +737,7 @@ mo = new Developer "Moritz", "Espresso"</pre>
         <img src="images/warn.jpg" width="300" height="271" alt="Warning" style="left:250px; top:120px;"/>
     </article>
 
-    <article data-x="4000" data-y="5000" data-z="-1" data-rotate-y="180" class="blackText slide" style="background-color: rgba(255,255,255,0.66)">
+    <article data-x="4000" data-y="5000" data-z="-1" data-rotate-y="180" class="hidden blackText slide" style="background-color: rgba(255,255,255,0.66)">
         <ul>
             <li>Nicht WTF frei
                 <div class="comment italic">keine eigene Laufzeit</div>
@@ -760,16 +760,21 @@ mo = new Developer "Moritz", "Espresso"</pre>
         </ul>
     </article>
 
-    <article data-z="10000" data-x="2000" data-y="2000" class="overview hidden centered blackText" id="thanks">
-        <div style="font-size: 60px;">Vielen Dank</div>
-        <a href="http://blog.notadomain.com" style="font-size: 40px;" class="blackText">Moritz Grauel</a><br/>
-        <a href="https://twitter.com/#!/mo_gr" style="font-size: 40px;" class="blackText">@mo_gr</a><br/>
-        <a href="mailto:moritz.grauel@akquinet.de" style="font-size: 40px;" class="blackText">moritz.grauel@akquinet.de</a>
+
+    <article data-scale="11" data-x="2000" data-y="2500" class="remove overview hidden centered blackText" id="fragen">
+        <div style="font-size: 60px;">Fragen?</div>
     </article>
 
-    <article data-z="10000" data-x="2000" data-y="2000" class="overview hidden centered blackText" id="end"/>
+    <article data-scale="11" data-x="2000" data-y="2500" class="remove overview hidden centered blackText" id="thanks">
+        <div style="font-size: 60px;">Vielen Dank</div>
+        <a href="https://plus.google.com/106410106555697258570" style="font-size: 40px;" class="blackText">+Moritz Grauel</a><br/>
+        <a href="https://twitter.com/#!/mo_gr" style="font-size: 40px;" class="blackText">@mo_gr</a><br/>
+        <a href="mailto:moritz.grauel@akquinet.de" style="font-size: 40px;" class="blackText">moritz.grauel@akquinet.de</a>
+        <!--<a href="http://blog.notadomain.com" style="font-size: 40px;" class="blackText">notadomain.com</a>-->
+    </article>
 
-    <!--TODO thankyou-->
+    <article data-scale="11" data-x="2000" data-y="2500" class="overview hidden centered blackText" id="end"></article>
+
 <!--TODO brewing methods-->
 <!--TODO effekt auf entwickler-->
 </div>

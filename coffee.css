@@ -123,6 +123,7 @@ article {
     line-height: 1.5;
 
     z-index: 1;
+    display: block;
 }
 
 .line {
@@ -160,7 +161,11 @@ article:not(.active) {
 
 article.hidden:not(.active) {
     opacity: 0;
-    visibility: hidden;
+}
+
+article.remove:not(.active) {
+    position: absolute;
+    top: -999999px;
 }
 
 article h1 {
@@ -231,7 +236,7 @@ li {
 
 img.belt {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 51px;
 }
 
