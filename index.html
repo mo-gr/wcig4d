@@ -85,7 +85,7 @@
         <div>BUSTED</div>
     </article>
 
-    <article data-x="3000" data-rotate-y="180" class="hidden blackText slide" style="background-color: rgba(255,255,255,0.66)">
+    <article data-z="-1" data-x="3000" data-rotate-y="180" class="hidden blackText slide" style="background-color: rgba(255,255,255,0.66)">
         <h2>Zwischen Öl und Kaffee liegen unter anderem</h2>
         <ul style="margin-left: 20px; padding-top: 0; padding-bottom: 0;">
             <li>Kupfer</li>
@@ -263,7 +263,7 @@
         <img src="images/wtfperminute.jpg" width="500" height="453" style="position: absolute; left: 150px; top: 30px;">
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000">
+    <article class="hidden remove" data-x="6000" data-y="3000">
         <pre id="wtfEquals_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* equals - how hard can it be? */
@@ -272,7 +272,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfEquals')">Run</button>
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-100">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-100">
         <pre id="wtfMath_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* It's math - I know math! */
@@ -283,7 +283,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfMath')">Run</button>
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-200">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-200">
         <pre id="wtfNumber_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* What is your favorite Number? */
@@ -292,7 +292,7 @@
 &lt;/script></pre>
         <button onclick="return refreshLiveCoding(event, 'wtfNumber')">Run</button>
     </article>
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-300">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-300">
         <pre id="wtfTransitive_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* Is this even possible? */
@@ -301,7 +301,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfTransitive')">Run</button>
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-400">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-400">
         <pre id="wtfBatman_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* My favorite */
@@ -312,7 +312,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfBatman')">Run</button>
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-500">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-500">
         <pre id="wtfBrackets_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     /* Well... uhm...*/
@@ -323,7 +323,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfBrackets')">Run</button>
     </article>
 
-    <article class="hidden" data-x="6000" data-y="3000" data-z="-500">
+    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-500">
         <pre id="wtfScope_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     function hello(nameParam) {
@@ -543,7 +543,7 @@ $(document).ready(function() {
         <h2 class="contrastBox">Mehr Zucker im Kaffee?</h2>
     </article>
 
-    <article class="hidden" data-y="5000" id="variableInterpolation">
+    <article class="hidden remove" data-y="5000" id="variableInterpolation">
         <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     drink = "Kaffee"
@@ -554,7 +554,7 @@ $(document).ready(function() {
         <button onclick="return refreshLiveCoffee(event, 'stringInter')">Compile</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="correctScope">
+    <article class="hidden remove" data-y="5000" id="correctScope">
         <pre id="scope_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     fill = (container, liquid = "Kaffee") ->
@@ -566,7 +566,7 @@ $(document).ready(function() {
         <button onclick="return refreshLiveCoffee(event, 'scope')">Compile</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="existential">
+    <article class="hidden remove" data-y="5000" id="existential">
         <pre id="existential_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     if not coffee? then alert "panic"
@@ -576,7 +576,7 @@ $(document).ready(function() {
         <button onclick="return refreshLiveCoffee(event, 'existential')">Compile</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="repeatArray">
+    <article class="hidden remove" data-y="5000" id="repeatArray">
         <pre id="repeatArray_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     count = 0
@@ -591,7 +591,7 @@ $(document).ready(function() {
         <button onclick="return executeLiveCoffee(event, 'repeatArray')">Run</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="listComprehension1">
+    <article class="hidden remove" data-y="5000" id="listComprehension1">
         <pre id="listComprehension1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
     for x in [1..10]
@@ -605,7 +605,7 @@ $(document).ready(function() {
         <button onclick="return refreshLiveCoffee(event, 'listComprehension1')">Compile</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="listComprehension2">
+    <article class="hidden remove" data-y="5000" id="listComprehension2">
         <pre id="listComprehension2_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
 list = [1 .. 10]
@@ -615,10 +615,11 @@ alert evenDoubled
 &lt;/script></pre>
         <div class="line"></div>
         <pre id="listComprehension2_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'listComprehension2')">Compile</button>
         <button onclick="return executeLiveCoffee(event, 'listComprehension2')">Run</button>
     </article>
 
-    <article class="hidden" data-y="5000" id="assign">
+    <article class="hidden remove" data-y="5000" id="assign">
         <pre id="assign_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
 fooBar = (baz) -> ["Foo#{baz}", "Bar#{baz}"]
@@ -629,15 +630,15 @@ fooBar = (baz) -> ["Foo#{baz}", "Bar#{baz}"]
         <button onclick="return refreshLiveCoffee(event, 'assign')">Compile</button>
     </article>
 
-    <article class="hidden blackText centered" data-x="1000" data-y="5000">
+    <article class="hidden blackText centered remove" data-x="1000" data-y="5000">
         Objekt Orientierung in JavaScript?
         </article>
 
-    <article class="hidden blackText centered" data-x="1000" data-y="5000">
+    <article class="hidden blackText centered remove" data-x="1000" data-y="5000">
         <img src="images/proto.png" width="640" height="480" style="left: 80px; top: -200px;"/>
     </article>
 
-    <article class="hidden" data-x="1000" data-y="5000" id="object1">
+    <article class="hidden remove" data-x="1000" data-y="5000" id="object1">
         <pre id="object1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 class Person
   constructor: (@name)
@@ -755,6 +756,7 @@ mo = new Developer "Moritz", "Espresso"</pre>
         <h2>CoffeeScript...</h2>
         <ul>
             <li>ist leicht zu lernen.</li>
+            <li>ist weniger Fehlerträchtig.</li>
             <li>macht mehr Spaß als JavaScript.</li>
             <li>nagelt niemanden fest.</li>
         </ul>
