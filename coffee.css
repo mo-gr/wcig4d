@@ -324,7 +324,7 @@ article.busted div {
     transform: rotateZ(-30deg);
 }
 
-#hello-coffeescript-slide a {
+.hello-coffeescript-slide a.coffee {
     color: #191932 !important;
     text-decoration: none;
     font-size: 102px;
