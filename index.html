@@ -626,8 +626,8 @@ $(document).ready(function() {
     <article class="hidden remove" data-y="5000" id="variableInterpolation">
         <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
-    drink = "Kaffee"
-    alert "Das beste Getränk ist #{drink}"
+    drink = "coffee"
+    alert "#{drink} is my favorite"
 &lt;/script></pre>
         <div class="line"></div>
         <pre id="stringInter_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
@@ -637,13 +637,14 @@ $(document).ready(function() {
     <article class="hidden remove" data-y="5000" id="correctScope">
         <pre id="scope_src" contenteditable="true" class="prettyprint lang-javascript smaller">
 &lt;script type="text/coffeescript">
-    fill = (container, liquid = "Kaffee") ->
-      msg = "Fülle #{liquid} in #{container}"
-      alert msg
+    fill = (container, liquid = "coffee") ->
+      "Filling #{liquid} in the #{container}"
+    alert fill('bucket')
 &lt;/script></pre>
         <div class="line"></div>
         <pre id="scope_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'scope')">Compile</button>
+        <button onclick="return executeLiveCoffee(event, 'scope')">Run</button>
     </article>
 
     <article class="hidden remove" data-y="5000" id="existential">
