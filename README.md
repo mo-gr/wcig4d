@@ -1,12 +1,14 @@
-=Why Coffee is good for Developers=
+##Why Coffee is good for Developers##
 
-Eine Einführung in [CoffeeScript](cs)
+Eine Einführung in [CoffeeScript][cs]
 
-Vortragsfolien für die [BEDCon 2012](bed)
+Vortragsfolien für die [BEDCon 2012][bed]
 
-An introduction to [CoffeeScript](cs)
+##Why Coffee is good for Developers##
 
-Presentation slides for [BEDCon 2012](bed)
+An introduction to [CoffeeScript][cs]
 
-(cd): http://coffeescript.org/
+Presentation slides for [BEDCon 2012][bed]
+
+[cs]: http://coffeescript.org/
 [bed]: http://bed-con.org/
