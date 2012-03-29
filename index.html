@@ -389,7 +389,7 @@
         <button onclick="return refreshLiveCoding(event, 'wtfBrackets')">Run</button>
     </article>
 
-    <article class="hidden remove" data-x="6000" data-y="3000" data-z="-500">
+    <div class="hidden remove" data-x="6000" data-y="3000" data-z="-500" style="display: none">
         <pre id="wtfScope_src" contenteditable="true" class="prettyprint lang-javascript">
 &lt;script type="text/javascript">
     function hello(nameParam) {
@@ -400,7 +400,7 @@
     alert('2nd: ' + greeting);
 &lt;/script></pre>
         <button onclick="return refreshLiveCoding(event, 'wtfScope')">Run</button>
-    </article>
+    </div>
 
     <article class="hidden centered" data-x="6000" data-y="3000" data-z="-1000">
         Genug?
@@ -655,6 +655,19 @@ $(document).ready(function() {
         <div class="line"></div>
         <pre id="existential_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'existential')">Compile</button>
+    </article>
+
+    <article class="hidden remove" data-y="5000" id="json">
+        <pre id="json_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+&lt;script type="text/coffeescript">
+    json = bedcon:
+      year: 2012
+      presenter:
+        name: "Moritz"
+&lt;/script></pre>
+        <div class="line"></div>
+        <pre id="json_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
+        <button onclick="return refreshLiveCoffee(event, 'json')">Compile</button>
     </article>
 
     <article class="hidden remove" data-y="5000" id="repeatArray">
