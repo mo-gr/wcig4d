@@ -623,13 +623,13 @@ $(document).ready(function() {
         <h2 class="contrastBox">Mehr Zucker im Kaffee?</h2>
     </article>
 
-    <article class="hidden remove" data-y="5000" id="variableInterpolation">
+    <article class="hidden remove" data-y="5000" id="c1">
         <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-coffee smaller">
-&lt;script type="text/coffeescript">
-    # string interpolation and auto-var
+    ###
+    Block Comments and auto-var
+    ###
     drink = "coffee"
-    alert "#{drink} is my favorite"
-&lt;/script></pre>
+    alert coffee</pre>
         <div class="line"></div>
         <pre id="stringInter_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'stringInter')">Compile</button>
@@ -637,7 +637,7 @@ $(document).ready(function() {
 
     <article class="hidden remove" data-y="5000" id="correctScope">
         <pre id="scope_src" contenteditable="true" class="prettyprint lang-coffee smaller">
-    # default arguments
+    # default arguments and string interpolation
     fill = (container, liquid = "coffee") ->
       "Filling #{liquid} in the #{container}"
     alert fill 'bucket'</pre>
@@ -650,6 +650,7 @@ $(document).ready(function() {
     <article class="hidden remove" data-y="5000" id="existential">
         <pre id="existential_src" contenteditable="true" class="prettyprint lang-coffee smaller">
     # existential operator and aliases
+    # like: not/! , and/&&, is/=== etc
     if not coffee? then alert "panic"</pre>
         <div class="line"></div>
         <pre id="existential_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
