@@ -624,8 +624,9 @@ $(document).ready(function() {
     </article>
 
     <article class="hidden remove" data-y="5000" id="variableInterpolation">
-        <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+        <pre id="stringInter_src" contenteditable="true" class="prettyprint lang-coffee smaller">
 &lt;script type="text/coffeescript">
+    # string interpolation and auto-var
     drink = "coffee"
     alert "#{drink} is my favorite"
 &lt;/script></pre>
@@ -635,12 +636,11 @@ $(document).ready(function() {
     </article>
 
     <article class="hidden remove" data-y="5000" id="correctScope">
-        <pre id="scope_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="scope_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+    # default arguments
     fill = (container, liquid = "coffee") ->
       "Filling #{liquid} in the #{container}"
-    alert fill('bucket')
-&lt;/script></pre>
+    alert fill 'bucket'</pre>
         <div class="line"></div>
         <pre id="scope_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'scope')">Compile</button>
@@ -648,37 +648,34 @@ $(document).ready(function() {
     </article>
 
     <article class="hidden remove" data-y="5000" id="existential">
-        <pre id="existential_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
-    if not coffee? then alert "panic"
-&lt;/script></pre>
+        <pre id="existential_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+    # existential operator and aliases
+    if not coffee? then alert "panic"</pre>
         <div class="line"></div>
         <pre id="existential_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'existential')">Compile</button>
     </article>
 
     <article class="hidden remove" data-y="5000" id="json">
-        <pre id="json_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="json_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+    # JSON in coffee
     json = bedcon:
       year: 2012
       presenter:
-        name: "Moritz"
-&lt;/script></pre>
+        name: "Moritz"</pre>
         <div class="line"></div>
         <pre id="json_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'json')">Compile</button>
     </article>
 
     <article class="hidden remove" data-y="5000" id="repeatArray">
-        <pre id="repeatArray_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="repeatArray_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+    # loops return an array
     count = 0
     addicted = until count > 5
         count++
         "Drinking Coffee #{count}"
-    alert addicted
-&lt;/script></pre>
+    alert addicted</pre>
         <div class="line"></div>
         <pre id="repeatArray_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'repeatArray')">Compile</button>
@@ -686,27 +683,26 @@ $(document).ready(function() {
     </article>
 
     <article class="hidden remove" data-y="5000" id="listComprehension1">
-        <pre id="listComprehension1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="listComprehension1_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+    # iterating over lists and maps
     for x in [1..10]
-        alert x
+        console.log x
     myLikes = { 'Espresso': true, 'Tea': false }
     for key, value of myLikes
-        alert("I like #{key}") if value
-&lt;/script></pre>
+        alert("I like #{key}") if value</pre>
         <div class="line"></div>
         <pre id="listComprehension1_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'listComprehension1')">Compile</button>
+        <button onclick="return executeLiveCoffee(event, 'listComprehension1')">Run</button>
     </article>
 
     <article class="hidden remove" data-y="5000" id="listComprehension2">
-        <pre id="listComprehension2_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="listComprehension2_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+# comprehensions
 list = [1 .. 10]
 evenDoubled =
       (i * 2 for i in list when (i % 2 == 0))
-alert evenDoubled
-&lt;/script></pre>
+alert evenDoubled</pre>
         <div class="line"></div>
         <pre id="listComprehension2_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'listComprehension2')">Compile</button>
@@ -714,11 +710,11 @@ alert evenDoubled
     </article>
 
     <article class="hidden remove" data-y="5000" id="assign">
-        <pre id="assign_src" contenteditable="true" class="prettyprint lang-javascript smaller">
-&lt;script type="text/coffeescript">
+        <pre id="assign_src" contenteditable="true" class="prettyprint lang-coffee smaller">
+# Destructuring Assignment
 fooBar = (baz) -> ["Foo#{baz}", "Bar#{baz}"]
-[foo, bar] = fooBar(42)
-&lt;/script></pre>
+
+[foo, bar] = fooBar(42)</pre>
         <div class="line"></div>
         <pre id="assign_embed" contenteditable="false" class="prettyprint lang-javascript generated smaller"></pre>
         <button onclick="return refreshLiveCoffee(event, 'assign')">Compile</button>
@@ -733,7 +729,7 @@ fooBar = (baz) -> ["Foo#{baz}", "Bar#{baz}"]
     </article>
 
     <article class="hidden remove" data-x="1000" data-y="5000" id="object1">
-        <pre id="object1_src" contenteditable="true" class="prettyprint lang-javascript smaller">
+        <pre id="object1_src" contenteditable="true" class="prettyprint lang-coffee smaller">
 class Person
   constructor: (@name)
   hi: ->
